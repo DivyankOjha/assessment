@@ -3,39 +3,6 @@ const fs = require("fs");
 const path = require("path");
 const Excel = require("exceljs");
 const xlsx = require("node-xlsx");
-exports.testAssessmentL1 = async (req, res, next) => {
-  console.log("L1");
-  console.log(req.file, req.files, req.body);
-
-  // let friends = fs.readFileSync("./node.xlsx", "utf-8");
-
-  // const data = fs.readFileSync("./node.xlsx", { encoding: "utf8" });
-  // console.log(data);
-  // var buf = fs.readFileSync("sheetjs.xlsx");
-  // var wb = XLSX.read(buf, { type: "buffer" });
-
-  // const workbook = new Excel.Workbook();
-  // await workbook.xlsx.readFile("./node.csv");
-  // var XLSX = require("xlsx");
-
-  // var workbook = XLSX.readFile("node.xlsx");
-
-  // var sheet_name_list = workbook.SheetNames;
-  // var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-  // console.log(xlData);
-
-  // Or var xlsx = require('node-xlsx').default;
-
-  // Parse a buffer
-  // const workSheetsFromBuffer = xlsx.parse(fs.readFileSync(`./node.xlsx`));
-  // Parse a file
-  const xlsx = require("node-xlsx");
-  const workSheetsFromFile = xlsx.parse(`./node.xlsx`);
-
-  res.status(200).json({
-    status: "success",
-  });
-};
 
 exports.testAssessmentL2 = async (req, res, next) => {
   console.log("tests");
