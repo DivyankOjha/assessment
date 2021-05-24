@@ -1,8 +1,6 @@
 const converter = require("json-2-csv");
 const fs = require("fs");
 const path = require("path");
-const Excel = require("exceljs");
-const xlsx = require("node-xlsx");
 
 exports.testAssessmentL2 = async (req, res, next) => {
   console.log("tests");
