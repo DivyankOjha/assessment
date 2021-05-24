@@ -1,10 +1,10 @@
-const converter = require('json-2-csv');
-const fs = require('fs');
-const path = require('path');
+const converter = require("json-2-csv");
+const fs = require("fs");
+const path = require("path");
 
 exports.testAssessmentL2 = async (req, res, next) => {
-  console.log('tests');
-  console.log('body', req.body);
+  console.log("tests");
+  console.log("body", req.body);
   // Requiring users file
   const users = req.body;
 
@@ -22,19 +22,19 @@ exports.testAssessmentL2 = async (req, res, next) => {
   array1 = []; //pushing non zero values
   array2 = []; // for storing 0's
   for (let i in users) {
-    if (users[i].RPM != '0' && users[i].RPM > '1500' && flag == false) {
+    if (users[i].RPM != "0" && users[i].RPM > "1500" && flag == false) {
       array1.push(users[i]);
       // console.log('pushed 1');
-    } else if (users[i].RPM == '0' && flag == false) {
+    } else if (users[i].RPM == "0" && flag == false) {
       counter = counter + 1;
       flag = true;
       array2.push(users[i]);
       // console.log('storing 1');
-    } else if (users[i].RPM == '0' && flag == true) {
+    } else if (users[i].RPM == "0" && flag == true) {
       array2.push(users[i]);
       counter = counter + 1;
       // console.log('storing 2');
-    } else if (users[i].RPM !== '0' && users[i].RPM > '1500' && flag == true) {
+    } else if (users[i].RPM !== "0" && users[i].RPM > "1500" && flag == true) {
       if (counter > 3) {
         // console.log(counter);
 
@@ -59,13 +59,14 @@ exports.testAssessmentL2 = async (req, res, next) => {
     if (err) {
       throw err;
     }
-    fs.writeFileSync('finalDataSet.csv', csv);
+    fs.writeFileSync("finalDataSet.csv", csv);
   });
   // }
 
   //console.log(users);
   res.status(200).json({
-    status: 'success',
+    status: "success",
+    OriginalDataLength: users.length,
     results: array1.length,
     data: array1,
   });
