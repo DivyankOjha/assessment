@@ -16,4 +16,4 @@
 
 ![image](https://user-images.githubusercontent.com/54564161/119331847-74cab700-bca5-11eb-9f3f-a84ebf2e966f.png)
 
-After the hitting the Api, the csv file is going to write on disks-  will be named as "finalDataSet", open the file and the check the data.
+After the hitting the Api, the csv file is going to write on disks-  will be named as "finalDataSet" in root of this project, open the file and the check the data.
